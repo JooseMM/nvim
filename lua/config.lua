@@ -3,6 +3,7 @@ local Main = {}
 vim.o.relativenumber 	= true
 vim.o.wrap		= false
 vim.o.shiftwidth	= 4
+vim.o.laststatus 	= 3
 function Main.setup()
 vim.cmd [[ hi Normal guibg=NONE ctermbg=NONE ]]
 vim.cmd [[ hi NonText guibg=NONE ctermbg=NONE ]]
