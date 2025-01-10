@@ -18,11 +18,13 @@ vim.keymap.set('n', '-', '5<C-w><', {})
 vim.keymap.set('n', '<leader>w', '<C-W>W', {})
 vim.keymap.set('i', 'jk', '<Esc>', {})
 vim.keymap.set('v', 'jk', '<Esc>', {})
+vim.keymap.set('t', 'jk', '<Esc>', {})
 -- LSP
 vim.keymap.set('n', '<leader>a', function() vim.lsp.buf.code_action() end)
 vim.keymap.set('n', '<leader>r', function() vim.lsp.buf.rename() end)
 -- Oil vim
 vim.keymap.set('n', '<leader>e', '<cmd>Oil<cr>', { desc = 'Open Oil file explorer' })
 vim.keymap.set('n', '<C-h>', '<cmd>Oil<cr>', { desc = 'Open Oil file explorer' })
-
-
+-- Toggleable terminal 
+vim.api.nvim_set_keymap('n', '<leader>tt', '<cmd>Floaterminal<cr>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('t', '<leader>tt', '<cmd>Floaterminal<cr>', { noremap = true, silent = true })
