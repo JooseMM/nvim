@@ -25,5 +25,5 @@ vim.keymap.set('n', '<leader>r', function() vim.lsp.buf.rename() end)
 vim.keymap.set('n', '<leader>e', '<cmd>Oil<cr>', { desc = 'Open Oil file explorer' })
 vim.keymap.set('n', '<C-h>', '<cmd>Oil<cr>', { desc = 'Open Oil file explorer' })
 -- Toggleable terminal 
-vim.api.nvim_set_keymap('n', '<leader>tt', '<cmd>Floaterminal<cr>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>tt', '<cmd>Floaterminal<cr><cmd>startinsert<cr>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('t', '<leader>tt', '<cmd>Floaterminal<cr>', { noremap = true, silent = true })
