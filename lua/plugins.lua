@@ -56,16 +56,11 @@ return {
 			local conform = require("conform")
 			conform.setup({
 				formatters_by_ft = {
-					javascript = { "prettier" },
-					typescript = { "prettier" },
-					css = { "prettier" },
-					html = { "prettier" },
-					json = { "prettier" },
-					markdown = { "prettier" },
 					lua = { "stylua" },
+					["_"] = { "prettier" },
 				},
 				format_on_save = {
-					lsp_fallback = true,
+					lsp_fallback = false,
 					async = false,
 					timeout_ms = 500,
 				},
@@ -126,5 +121,26 @@ return {
 			win_options = {},
 		},
 		dependencies = { { "echasnovski/mini.icons", opts = {} } },
+	},
+	{
+		"norcalli/nvim-colorizer.lua",
+		config = function()
+			require("colorizer").setup({
+				"css",
+				"typescript",
+				"typescriptreact",
+				"javascript",
+			}, {
+				RGB = true, -- #RGB hex codes
+				RRGGBB = true, -- #RRGGBB hex codes
+				RRGGBBAA = true, -- #RRGGBBAA hex codes
+				rgb_fn = true, -- CSS rgb() and rgba() functions
+				hsl_fn = true, -- CSS hsl() and hsla() functions
+				css = true, -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
+				css_fn = true, -- Enable all CSS *functions*: rgb_fn, hsl_fn
+				-- Available modes: foreground, background
+				mode = "background",
+			})
+		end,
 	},
 }
