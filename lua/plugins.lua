@@ -57,12 +57,8 @@ return {
 			conform.setup({
 				formatters_by_ft = {
 					lua = { "stylua" },
+					c = { "clang-format" },
 					["_"] = { "prettier" },
-				},
-				format_on_save = {
-					lsp_fallback = false,
-					async = false,
-					timeout_ms = 500,
 				},
 			})
 		end,
@@ -203,5 +199,33 @@ return {
 				background_colour = "#000000",
 			})
 		end,
+	},
+	{
+		"mfussenegger/nvim-lint",
+		event = {
+			"BufReadPre",
+			"BufNewFile",
+		},
+		config = function()
+			local lint = require("lint")
+
+			lint.linters_by_ft = {
+				javascript = { "eslint_d" },
+				typescript = { "eslint_d" },
+				typescriptreact = { "eslint_d" },
+			}
+
+			local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })
+
+			vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost", "InsertLeave" }, {
+				group = lint_augroup,
+				callback = function()
+					lint.try_lint()
+				end,
+			})
+		end,
+	},
+	{
+		"ThePrimeagen/harpoon",
 	},
 }
