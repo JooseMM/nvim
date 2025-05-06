@@ -45,7 +45,7 @@ end, { desc = "Format file or range (in visual mode)" })
 
 -- harpoon
 
-vim.keymap.set("n", "<leader>af", function()
+vim.keymap.set("n", "<leader>ha", function()
 	require("harpoon.mark").add_file()
 end, { desc = "add file to harpoon" })
 
