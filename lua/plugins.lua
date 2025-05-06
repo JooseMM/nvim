@@ -57,8 +57,10 @@ return {
 			conform.setup({
 				formatters_by_ft = {
 					lua = { "stylua" },
-					c = { "clang-format" },
 					["_"] = { "prettier" },
+				},
+				default_format_opts = {
+					lsp_format = "never",
 				},
 			})
 		end,

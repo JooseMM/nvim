@@ -37,7 +37,7 @@ vim.api.nvim_set_keymap("t", "<leader>tt", "<cmd>Floaterminal<cr>", { noremap = 
 vim.keymap.set({ "n", "v" }, "<leader>fm", function()
 	local conform = require("conform")
 	conform.format({
-		lsp_fallback = true,
+		lsp_fallback = false,
 		async = false,
 		timeout_ms = 1000,
 	})
