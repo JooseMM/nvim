@@ -1,6 +1,6 @@
 return {
 	{
-		"ellisonleao/gruvbox.nvim",
+		"sainnhe/gruvbox-material",
 		opts = {
 			transparent_mode = true,
 		},
@@ -8,7 +8,7 @@ return {
 		priority = 1000, -- make sure to load this before all the other start plugins
 		config = function()
 			-- load the colorscheme here
-			vim.cmd([[colorscheme gruvbox]])
+			vim.cmd([[colorscheme gruvbox-material]])
 		end,
 	},
 
@@ -144,7 +144,7 @@ return {
 	{
 		"nvim-lualine/lualine.nvim",
 		dependencies = { "nvim-tree/nvim-web-devicons" },
-		options = { theme = "gruvbox_dark" },
+		options = { theme = "gruvbox-material" },
 		config = function()
 			require("lualine").setup()
 		end,
