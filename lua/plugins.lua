@@ -1,5 +1,19 @@
 return {
 	{
+		"nvim-treesitter/nvim-treesitter",
+		build = ":TSUpdate",
+		config = function()
+			local configs = require("nvim-treesitter.configs")
+
+			configs.setup({
+				ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "javascript", "typescript", "go", "html" },
+				sync_install = false,
+				highlight = { enable = true },
+				indent = { enable = false },
+			})
+		end,
+	},
+	{
 		"sainnhe/gruvbox-material",
 		opts = {
 			transparent_mode = true,
@@ -57,7 +71,9 @@ return {
 			conform.setup({
 				formatters_by_ft = {
 					lua = { "stylua" },
-					["_"] = { "prettier" },
+					javascript = { "prettier" },
+					typescript = { "prettier" },
+					go = { "golines" },
 				},
 				default_format_opts = {
 					lsp_format = "never",
