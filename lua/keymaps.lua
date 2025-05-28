@@ -1,5 +1,3 @@
-require("plugins")
-
 vim.g.mapleader = " "
 --copy to sys clipboard
 vim.keymap.set("v", "<C-c>", "+y", {})
@@ -21,9 +19,11 @@ end)
 vim.keymap.set("n", "<leader>r", function()
 	vim.lsp.buf.rename()
 end)
+
 -- Oil vim
 vim.keymap.set("n", "<leader>e", "<cmd>Oil<cr>", { desc = "Open Oil file explorer" })
 vim.keymap.set("n", "<C-h>", "<cmd>Oil<cr>", { desc = "Open Oil file explorer" })
+
 -- Toggleable terminal
 vim.api.nvim_set_keymap(
 	"n",
@@ -31,9 +31,11 @@ vim.api.nvim_set_keymap(
 	"<cmd>Floaterminal<cr><cmd>startinsert<cr>",
 	{ noremap = true, silent = true }
 )
+
+-- Floating terminal
 vim.api.nvim_set_keymap("t", "<leader>tt", "<cmd>Floaterminal<cr>", { noremap = true, silent = true })
 
--- formatting
+-- Formatting
 vim.keymap.set({ "n", "v" }, "<leader>fm", function()
 	local conform = require("conform")
 	conform.format({
@@ -43,8 +45,7 @@ vim.keymap.set({ "n", "v" }, "<leader>fm", function()
 	})
 end, { desc = "Format file or range (in visual mode)" })
 
--- harpoon
-
+-- Harpoon
 vim.keymap.set("n", "<leader>ha", function()
 	require("harpoon.mark").add_file()
 end, { desc = "add file to harpoon" })

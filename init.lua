@@ -1,6 +1,6 @@
-require("base")
-require("toggle_terminal")
-require("config").setup()
-require("lsp").setup()
+require("configuration")
+require("core")
+require("keymaps")
+require("utils.toggle_terminal")
 
 
