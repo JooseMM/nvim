@@ -1,6 +1,7 @@
 vim.g.mapleader = " "
 --copy to sys clipboard
-vim.keymap.set("v", "<C-c>", "+y", {})
+vim.keymap.set("v", "<leader>y", '"+y', {})
+vim.keymap.set("n", "<leader>p", '"+p', {})
 --Telescope
 vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", {})
 vim.keymap.set("n", "<leader>fw", "<cmd>Telescope live_grep<cr>", {})
