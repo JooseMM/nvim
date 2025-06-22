@@ -6,10 +6,13 @@ return {
 			local conform = require("conform")
 			conform.setup({
 				formatters_by_ft = {
+					go = { "golines" },
 					lua = { "stylua" },
+					html = { "prettier" },
 					javascript = { "prettier" },
 					typescript = { "prettier" },
-					go = { "golines" },
+					typescriptreact = { "prettier" },
+					javascriptreact = { "prettier" },
 				},
 				default_format_opts = {
 					lsp_format = "never",
