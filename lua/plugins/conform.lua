@@ -8,11 +8,13 @@ return {
 				formatters_by_ft = {
 					go = { "golines" },
 					lua = { "stylua" },
+					css = { "prettier" },
 					html = { "prettier" },
 					javascript = { "prettier" },
 					typescript = { "prettier" },
 					typescriptreact = { "prettier" },
 					javascriptreact = { "prettier" },
+					python = { "black" },
 				},
 				default_format_opts = {
 					lsp_format = "never",
