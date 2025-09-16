@@ -23,7 +23,6 @@ end)
 
 -- Oil vim
 vim.keymap.set("n", "<leader>e", "<cmd>Oil<cr>", { desc = "Open Oil file explorer" })
-vim.keymap.set("n", "<C-h>", "<cmd>Oil<cr>", { desc = "Open Oil file explorer" })
 
 -- Toggleable terminal
 vim.api.nvim_set_keymap(
