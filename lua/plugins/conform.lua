@@ -15,6 +15,7 @@ return {
 					typescriptreact = { "prettier" },
 					javascriptreact = { "prettier" },
 					python = { "black" },
+					cs = { "csharpier" }
 				},
 				default_format_opts = {
 					lsp_format = "never",

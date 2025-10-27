@@ -1,3 +1,4 @@
+vim.opt.shell = "pwsh.exe"
 require("configuration")
 require("core")
 require("keymaps")
