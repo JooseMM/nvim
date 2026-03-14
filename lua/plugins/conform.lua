@@ -22,9 +22,9 @@ return {
 				},
 				formatters = {
 					csharpier = {
-						command = "dotnet",
+						command = "csharpier",
 						args = { "format", "$FILENAME"},
-						stdout = false,
+						stdin = false,
 					},
 				},
 			})
