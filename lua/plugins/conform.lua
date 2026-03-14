@@ -15,10 +15,17 @@ return {
 					typescriptreact = { "prettier" },
 					javascriptreact = { "prettier" },
 					python = { "black" },
-					cs = { "csharpier" }
+					cs = { "csharpier" },
 				},
 				default_format_opts = {
 					lsp_format = "never",
+				},
+				formatters = {
+					csharpier = {
+						command = "dotnet",
+						args = { "format", "$FILENAME"},
+						stdout = false,
+					},
 				},
 			})
 		end,

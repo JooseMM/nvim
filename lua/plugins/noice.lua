@@ -49,6 +49,7 @@ return {
 			require("notify").setup({
 				background_colour = "#000000",
 				timeout = 100,
+				top_down = false,
 			})
 		end,
 	},
